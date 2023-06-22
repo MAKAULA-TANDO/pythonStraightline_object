@@ -27,37 +27,30 @@ class MathsAppObject:
         print("***********************************************************************************************")
 
 def calculate_distance(self):
-    x2 = 0
-    y2 = 0
-    temp1 = pow((self.x - self.y), 2)
-    temp2 = pow((x2 - y2), 2)
-    result = math.sqrt(temp1 + temp2)
-    return result
+    return math.sqrt(pow((self.x - self.y), 2) + pow(0, 2))
 
 
 def reflection_x(self):
-    x_ref = (-1) * self.y
-    return x_ref
+    return (-1) * self.y
 
 
 def reflection_y(self):
-    y_ref = (-1) * self.x
-    return y_ref
+    return (-1) * self.x
 
 
 def quadrant(self):
-    if self.x > 0 and self.y > 0:
-        quad = " ilele kwikota yokuqala yokuqala, EMTLA MPUMA."
-        if self.x < 0 and self.y > 0:
-            quad = " ilele kwikota yesibini yesibini, EMTLA MPUMA."
-            if self.x < 0 and self.y < 0:
-                quad = " ilele kwikota yesithathu, EMZANTSI NTSHONA."
-                if self.x > 0 and self.y < 0:
-                    quad = " ilele kwikota yesine, EMZANTSI MPUMA."
-                    if self.x == 0 and self.y == 0:
-                        quad = "ISIPHAMBUKA."
+    if self.x <= 0 or self.y <= 0:
+        return
+    quad = " ilele kwikota yokuqala yokuqala, EMTLA MPUMA."
+    if self.x < 0:
+        quad = " ilele kwikota yesibini yesibini, EMTLA MPUMA."
+        if self.y < 0:
+            quad = " ilele kwikota yesithathu, EMZANTSI NTSHONA."
+            quad = " ilele kwikota yesine, EMZANTSI MPUMA."
+            if self.x == 0 and self.y == 0:
+                quad = "ISIPHAMBUKA."
 
-        return quad
+    return quad
 
 
 if __name__ == '__main__':
